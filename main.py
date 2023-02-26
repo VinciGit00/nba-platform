@@ -39,7 +39,8 @@ def get_player_data(player_id):
             df['STL'] = df['STL'] / df['GP']
             df['BLK'] = df['BLK'] / df['GP']
 
-            df = df.rename(columns={'PTS': 'PTS/g', 'AST': 'AST/g', 
+            df = df.rename(columns={'GROUP_VALUE': 'YEAR',
+                                    'PTS': 'PTS/g', 'AST': 'AST/g', 
                                     'REB': 'REB/g', 'OREB': 'OREB/g', 
                                     'DREB': 'DREB/g', 'STL': 'STL/g', 
                                     'BLK': 'BLK/g'})
@@ -69,21 +70,23 @@ def get_player_data(player_id):
         """)
 
         chart_data = df[['PTS/g']]    
-        st.line_chart(chart_data)
+        st.line_chart(data = df, x= 'YEAR', y = 'PTS/g')
 
         st.write("""
         ## Assist/game
         """)
 
         chart_data = df[['REB/g']]    
-        st.line_chart(chart_data)
-        
+        st.line_chart(data = df, x= 'YEAR', y = 'AST/g')
+ 
         st.write("""
         ## Rebound/game
         """)
 
         chart_data = df[['REB/g']]    
-        st.line_chart(chart_data)
+        st.line_chart(data = df, x= 'YEAR', y = 'REB/g')
+
+        
 
 
 st.write("""
