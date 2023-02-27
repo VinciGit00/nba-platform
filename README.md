@@ -1,2 +1,1 @@
-# nba platform
- nba open source platform to find player stats
+Python open source web App created with streamlit library for visualize every personal informations of players currently playing in the NBA. The app is Online and it's avaiable at the following link: https://vincigit00-nba-platform-main-ounnit.streamlit.app

@@ -92,6 +92,7 @@ def get_player_data(player_id):
 st.write("""
 # NBA stats
 Made by Marco Vinciguerra
+###Write first surname and after name* \n
 """)
          
 # Add a text field for user input
