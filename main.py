@@ -3,6 +3,7 @@ import pandas as pd
 from nba_api.stats.endpoints import playerdashboardbyyearoveryear
 from datetime import datetime
 from getid import *
+from PIL import Image
 
 def get_player_data(player_id):
     """
@@ -89,12 +90,22 @@ def get_player_data(player_id):
         
 
 
+
+col1, col2 = st.columns([1, 2.5])  
+
+with col1:
+   st.write("""
+    # NBA stats
+    """)
+
+with col2:
+   img = Image.open("Assets/nba-logo-transparent.png")
+   resized_img = img.resize((24*2, 53*2)) 
+   st.image(resized_img)
 st.write("""
-# NBA stats
 Made by Marco Vinciguerra \n
 Write first surname and after name \n
 """)
-         
 # Add a text field for user input
 user_input = st.text_input("Enter the name of the player:")
 
