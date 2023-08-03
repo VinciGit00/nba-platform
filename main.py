@@ -56,8 +56,6 @@ def get_player_data(player_id):
         name = df.__class__.__name__
         data[name] = df
 
-
-
     # Print the data frames in Streamlit
     for name, df in data.items():
         st.write(f"### {name}")
@@ -86,9 +84,6 @@ def get_player_data(player_id):
 
         chart_data = df[['REB/g']]    
         st.line_chart(data = df, x= 'YEAR', y = 'REB/g')
-
-        
-
 
 
 col1, col2 = st.columns([1, 2.5])  
