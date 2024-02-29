@@ -1,0 +1,29 @@
+name: Write Random Value to File
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 21 */1 * *"
+
+jobs:
+  write_random_value:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      
+      - name: Write random value to file
+        run: |
+          echo $RANDOM > current_value.txt
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add current_value.txt
+          git commit -m "Update current value"
+          git push
