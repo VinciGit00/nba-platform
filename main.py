@@ -116,4 +116,5 @@ if st.button("Submit"):
         get_player_data(player_id)
     else:
        st.write("Player inserted not found") 
+       
     
